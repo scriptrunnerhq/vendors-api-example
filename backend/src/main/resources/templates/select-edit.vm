@@ -1,0 +1,12 @@
+$webResourceManager.requireResourcesForContext("com.scriptrunnerhq.backend:entrypoint-vendorsApiSelectExample")
+
+#customControlHeader ($action $customField.id $customField.name $fieldLayoutItem.required $displayParameters $auiparams)
+<div
+        id='${customField.id}-container'
+        data-scriptrunner-vendors-api-cfid='${customField.id}'
+        data-scriptrunner-vendors-api-stored-value='${textutils.htmlEncode($!value)}'
+></div>
+<script type="application/javascript">
+    AJS.toInit(() => sr_initCustomSelectField('$customField.id', '$textutils.htmlEncode($!value)'))
+</script>
+#customControlFooter ($action $customField.id $fieldLayoutItem.fieldDescription $displayParameters $auiparams)

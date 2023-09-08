@@ -1,0 +1,45 @@
+{namespace servlet.ui}
+/**
+ * This template is needed to draw the form page.
+ */
+{template .form}
+    {@param contextPath: string}
+    {webResourceManager_requireResourcesForContext('form')}
+    <html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="decorator" content="atl.admin">
+        <meta name="admin.active.section" content="admin_plugins_menu/react">
+        <title>Form Page</title>
+    </head>
+    <body>
+    <div class="field-group hidden">
+        <input class="text" type="text" id="contextPath" name="contextPath" value="{$contextPath}">
+    </div>
+    <div id="maincontainer">
+        <div id="container">
+        </div>
+    </div>
+    </body>
+    </html>
+{/template}
+/**
+ * This template is needed to draw the dynamic table page.
+ */
+{template .dynamictable}
+    {webResourceManager_requireResourcesForContext('dynamictable')}
+    <html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="decorator" content="atl.admin">
+        <meta name="admin.active.section" content="admin_plugins_menu/react">
+        <title>Dynamic Table Page</title>
+    </head>
+    <body>
+    <div id="maincontainer">
+        <div id="container">
+        </div>
+    </div>
+    </body>
+    </html>
+{/template}

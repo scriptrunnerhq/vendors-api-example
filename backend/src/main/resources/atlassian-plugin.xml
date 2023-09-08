@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<atlassian-plugin key="${atlassian.plugin.key}" name="${project.name}" plugins-version="2"> 
+  <plugin-info> 
+    <description>${project.description}</description>  
+    <version>${project.version}</version>  
+    <vendor name="${project.organization.name}" url="${project.organization.url}"/>  
+  </plugin-info>
+  <resource type="i18n" name="i18n" location="jira-react-atlaskit"/>
+  <customfield-type name="SR Vendors API Example" i18n-name-key="sr-vendors-api-example.name" key="sr-vendors-api-example" class="com.scriptrunnerhq.CustomField">
+    <description key="sr-vendors-api-example.description"/>
+    <resource name="view" type="velocity" location="/templates/view.vm"/>
+    <resource name="edit" type="velocity" location="/templates/edit.vm"/>
+  </customfield-type>
+  <customfield-type name="SR Vendors API Select Example" i18n-name-key="sr-vendors-api-select-example.name" key="sr-vendors-api-select-example" class="com.scriptrunnerhq.CustomField">
+    <description key="sr-vendors-api-select-example.description"/>
+    <resource name="view" type="velocity" location="/templates/view.vm"/>
+    <resource name="edit" type="velocity" location="/templates/select-edit.vm"/>
+  </customfield-type>
+
+</atlassian-plugin>
