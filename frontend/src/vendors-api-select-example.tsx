@@ -58,7 +58,8 @@ const Component: React.FC<{elementId: string, initValue: string}> = ({ elementId
         onChange={handleChange}
         placeholder={'Choose option'}
         isDisabled={readOnly}
-    />);
+        styles={{ menu: base => ({ ...base, zIndex: 9999 }) }}
+    />)
 }
 
 // @ts-ignore
