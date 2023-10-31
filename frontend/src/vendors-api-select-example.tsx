@@ -27,7 +27,6 @@ const Component: React.FC<{elementId: string, initValue: string}> = ({ elementId
         setInternalValue(newValue)
         vendorsApiCallback.current?.({ value: newValue?.value.toString() || '', fieldId: elementId })
     }
-    const getValue = () => value?.value ?? -1
 
     React.useEffect(() => {
         VendorsApi.init<ValueType<string>>(`${elementId}-container`, {
@@ -36,7 +35,10 @@ const Component: React.FC<{elementId: string, initValue: string}> = ({ elementId
                 setInternalValue({ label: value, value: key });
             },
             getValue() {
-                return value?.label || ''
+                const inputElement = document.querySelector(`input[name="${elementId}"]`)
+                const inputValue = inputElement?.getAttribute('value')
+
+                return inputValue ?? '-1'
             },
             setReadOnly(readOnly: boolean): PromiseOr<void> {
                 setReadOnly(readOnly)
