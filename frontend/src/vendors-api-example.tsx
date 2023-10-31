@@ -16,14 +16,15 @@ const Component: React.FC<{elementId: string, initValue: string, onChange: (valu
     const handleBlur = () => {
         vendorsApiCallback.current?.({ value, fieldId: elementId })
     }
-    const getValue = () => value
 
     React.useEffect(() => {
         VendorsApi.init<string>(elementId, {
             setValue(value: string): PromiseOr<void> {
                 handleChange(value)
             },
-            getValue,
+            getValue() {
+                return document.getElementById(elementId)?.getAttribute('value') ?? ''
+            },
             setReadOnly(readOnly: boolean): PromiseOr<void> {
                 setReadOnly(readOnly)
             },
