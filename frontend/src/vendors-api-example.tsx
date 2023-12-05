@@ -34,6 +34,7 @@ const Component: React.FC<{elementId: string, initValue: string, onChange: (valu
         })
     }, [])
 
+    //test
     return (<input value={value} readOnly={readOnly} onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleChange(e.target.value)} onBlur={handleBlur}/>);
 }
 
